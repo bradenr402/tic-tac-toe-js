@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="script.js" defer></script>
-    <title>Title</title>
+    <title>Tic-Tac-Toe</title>
   </head>
 
   <body>
+    <h1 class="title">Tic<span class="mid-title">Tac</span>Toe</h1>
 
+    <p id="turn">X's Turn</p>
+
+    <div class="game-box">
+      <div class="game-container">
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+        <div class="space" data-turn="×"></div>
+      </div>
+    </div>
+
+    <div class="restart-btn-container">
+      <button class="restart-btn">Restart Game</button>
+    </div>
+
+    <div id="win-modal">
+      <div class="win-modal-container">
+        <div id="win-modal-text-box">
+          <p id="win-modal-text">winner</p>
+        </div>
+        <button class="new-game-btn">New Game</button>
+      </div>
+    </div>
   </body>
-
 </html>

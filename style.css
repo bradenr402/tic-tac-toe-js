@@ -2,10 +2,143 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: sans-serif;
+  background-color: #f3f4f8;
+}
 
+.game-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.game-container {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(30, 30, 30);
+
+  display: grid;
+  grid-template-rows: repeat(3, 130px);
+  grid-template-columns: repeat(3, 130px);
+  gap: 5px;
+}
+
+.space {
+  font-size: 6rem;
+  font-family: monospace;
+  background-color: #f3f4f8;
+  color: #0276ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.space:empty::before {
+  content: attr(data-turn);
+  color: rgb(30, 30, 30);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.space:empty:hover::before {
+  opacity: 0.2;
+}
+
+.restart-btn,
+.new-game-btn {
+  font-size: 1.25rem;
+  font-weight: 600;
+  background-color: #0276ff;
+  color: #eee;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+
+.restart-btn:active,
+.new-game-btn:active {
+  background-color: #006ae8;
+}
+
+.restart-btn:hover,
+.new-game-btn:hover {
+  background-color: #1c84ff;
+}
+
+#turn {
+  margin: 4rem auto;
+  width: 60%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#win-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(27, 150, 33, 0.616);
+
+  text-align: center;
+}
+
+#win-modal .win-modal-container {
+  margin: auto;
+  padding: 1rem;
+  font-size: 3rem;
+  width: 450px;
+  height: 350px;
+  background-color: white;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2.8px 2.2px -30px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px -30px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px -30px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px -30px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px -30px rgba(0, 0, 0, 0.05),
+    0 100px 80px -30px rgba(0, 0, 0, 0.07);
+}
+
+#win-modal-text-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 1rem;
+  color: rgb(30, 30, 30);
+
+  text-shadow: 3px 4px 7px rgba(67, 67, 67, 0.8);
+}
+
+.mid-title {
+  color: #0276ff;
+}
+
+.restart-btn-container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
